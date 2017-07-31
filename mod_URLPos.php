@@ -11,7 +11,8 @@ class URLPos{
 //Retorna array com referências da URL a paritir do /index.php/[1]/[2]/[3]...
 	public static function getURLObjects(){
 		$tmp=explode('/',self::getURLPos());//Explode endereço URL a partir do /index.php
-		unset($tmp[0]);return $tmp; //Remove index.php e retorna
+		if(strtolower($tmp[0])=="index.php")unset($tmp[0]);
+		return $tmp; //Remove index.php e retorna
 	}
 
 //Retorna string com diretórios suficientes para a raiz da página, pasta do index.php

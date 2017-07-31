@@ -8,7 +8,7 @@ class CAPISPHP_Structure{
   //Dados padrão:
   public static $autor="Jeimison Moreno";
   public static $HTML_lang="pt";
-  public static $COPYRIGHT="GNU GENERAL PUBLIC LICENSE";
+  public static $COPYRIGHT="GNU GENERAL PUBLIC LICENSE v3";
   public static $descricao="Ferramenta de exemplo sem fins lucrativos e diversas funcionalidades";
   public static $titulo="Início";
   public static $corTema="#ffffff";
@@ -41,9 +41,6 @@ class CAPISPHP_Structure{
   public static function host_link(){return 'http://'.$_SERVER['HTTP_HOST'].'/';}
 }
 
-
-//Reconhece URL atual e navega diretamente.
-PageControl::navegar_para(URLPos::getURLObjects());
 
 class MainView{
 public static $conteudo="";
@@ -91,21 +88,21 @@ echo('<!DOCTYPE html>
 <html lang="'.CAPISPHP_Structure::$HTML_lang.'">
 <head>
 '.self::$headStrct.'
-    <link href="'.URLPos::getURLDirRoot().'css/clean-blog.min.css" rel="stylesheet">
-    <link href="'.URLPos::getURLDirRoot().'vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <script src="'.URLPos::getURLDirRoot().'vendor/jquery/jquery.min.js"></script>
-    <script src="'.URLPos::getURLDirRoot().'vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="'.URLPos::getURLDirRoot().'js/jqBootstrapValidation.js"></script>
-    <script src="'.URLPos::getURLDirRoot().'js/contact_me.js"></script>
-    <script src="'.URLPos::getURLDirRoot().'js/clean-blog.min.js"></script>
-
 </head>
-<body>'.self::$conteudo.'</body>
-	</html>');
+<body>
+'.self::$conteudo.'
+</body>
+</html>');
 }
 }
-MainView::makeview();
+
+$web = new MainView(); //Constrói interpretador mestre [CAPISPHP Core].
+
+//Reconhece URL atual e navega diretamente.
+PageControl::navegar_para(URLPos::getURLObjects());
+
+$body = new WebView(); //Constrói view principal da página carregada.
+$web->EchoView($body->html()); //Inclui mudanças da página.
+
 
 ?>
