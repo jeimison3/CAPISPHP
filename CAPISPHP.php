@@ -1,4 +1,6 @@
 <?php
+//Desenvolvido por Jeimison M. Lima | http://jeimison.me.pn | https://github.com/jeimison3/CAPISPHP/
+
 include_once('./mod_PageControl.php'); //Controle de redirecionamentos [MODIFIQUE]
 include_once('./mod_URLPos.php'); //Funções para redirecionamentos
 
@@ -6,7 +8,8 @@ include_once('./mod_URLPos.php'); //Funções para redirecionamentos
 class CAPISPHP_Structure{
 
   //Dados padrão:
-  public static $autor="Jeimison Moreno";
+  public static $METAPROP_SiteName="Site Exemplo";
+  public static $autor="Nome Autor";
   public static $HTML_lang="pt";
   public static $COPYRIGHT="GNU GENERAL PUBLIC LICENSE v3";
   public static $descricao="Ferramenta de exemplo sem fins lucrativos e diversas funcionalidades";
@@ -15,7 +18,6 @@ class CAPISPHP_Structure{
   public static $keywrds="";
 
   public static $UsarMetaProp=false;
-  public static $METAPROP_SiteName="Site Exemplo";
   public static $METAPROP_Language="pt-br";
   public static $METAPROP_Locale="pt_BR";
   public static $METAPROP_IMG="";

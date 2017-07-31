@@ -7,7 +7,7 @@ private static $indexes=array(
 private static $DEFAULT='inicio';
 
 private static $ERRORS=array(
-404 => 'erro404.php');
+404 => 'err404.php');
 
 public static function navegar_para($navEnter){
   if(!isset($navEnter[1])) $navEnter[1]=self::$DEFAULT;
