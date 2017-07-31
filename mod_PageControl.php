@@ -1,8 +1,11 @@
 <?php
 class PageControl{
+
+//Redirecionamentos URL referenciada após o /index.php/[1]
 private static $indexes=array(
 'inicio.php'=>'',
 'inicio.php'=>'inicio');
+
 
 private static $ERRORS=array(
 404 => 'erro404.php');

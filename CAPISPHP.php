@@ -8,16 +8,17 @@ class CAPISPHP_Structure{
   //Dados padrão:
   public static $autor="Jeimison Moreno";
   public static $HTML_lang="pt";
-  public static $COPYRIGHT="Copyright (c) 2017 Jeimison Moreno";
-  public static $descricao="Ferramenta de exemplo";
+  public static $COPYRIGHT="GNU GENERAL PUBLIC LICENSE";
+  public static $descricao="Ferramenta de exemplo sem fins lucrativos e diversas funcionalidades";
   public static $titulo="Início";
-  public static $corTema="#000000";
+  public static $corTema="#ffffff";
   public static $keywrds="";
 
+  public static $UsarMetaProp=false;
   public static $METAPROP_SiteName="Site Exemplo";
   public static $METAPROP_Language="pt-br";
   public static $METAPROP_Locale="pt_BR";
-  public static $METAPROP_IMG="img/sla.jpg";
+  public static $METAPROP_IMG="";
   //( Alterações exigem uso das funções abaixo )
 
   //Definir título da página atual
@@ -73,6 +74,7 @@ self::AddMeta('DISTRIBUTION','GLOBAL');
 self::AddMeta('RESOURCE-TYPE','DOCUMENT');
 self::AddMeta('Robots','INDEX,FOLLOW');
 
+if(CAPISPHP_Structure::$UsarMetaProp){
 self::AddRawMeta('property="og:locale" content="'.CAPISPHP_Structure::$METAPROP_Locale.'"');
 self::AddRawMeta('property="og:description" content="'.PageStruct::$descricao.'"');
 self::AddRawMeta('property="og:site_name" content="'.CAPISPHP_Structure::$METAPROP_SiteName.'"');
@@ -80,6 +82,7 @@ self::AddRawMeta('property="og:image" itemprop="image" content="'.CAPISPHP_Struc
 self::AddRawMeta('property="og:url" content="'.CAPISPHP_Structure::endereco_link().'"');
 self::AddRawMeta('property="og:type" content="article"');
 self::AddRawMeta('property="og:title" content="'.CAPISPHP_Structure::$titulo.' - '.CAPISPHP_Structure::$METAPROP_SiteName.'"');
+}
 
 self::AddHead('<title>'.CAPISPHP_Structure::$titulo.' - '.CAPISPHP_Structure::$METAPROP_SiteName.'</title>');
 //self::AddHead('');
@@ -87,7 +90,7 @@ self::AddHead('<title>'.CAPISPHP_Structure::$titulo.' - '.CAPISPHP_Structure::$M
 echo('<!DOCTYPE html>
 <html lang="'.CAPISPHP_Structure::$HTML_lang.'">
 <head>
-    '.self::$headStrct.'
+'.self::$headStrct.'
     <link href="'.URLPos::getURLDirRoot().'css/clean-blog.min.css" rel="stylesheet">
     <link href="'.URLPos::getURLDirRoot().'vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
