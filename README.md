@@ -2,7 +2,7 @@
 ### Tenha uma pequena e poderosa livraria de comandos para desenvolver seu site usando:
 - Links simplificados. (www.exemplo.com/post/how-to... ou www.exemplo.com/index.php/post/how-to...)
 - CURL com mais configurações e menos linhas.
-- Suporte *padrão* (e não obrigatório) a Bootstrap.
+- **Suporte** padrão (e não obrigatório) a Bootstrap.
 - Configuração automática de meta tags para **incorporação de links** em redes sociais. (Facebook, Whatsapp, LinkedIn, etc.)
 
 
@@ -16,7 +16,7 @@ private static $indexes=array(
 private static $DEFAULT='inicio';
 
 private static $ERRORS=array(
-404 => 'erro404.php');
+404 => 'err404.php');
 ```
 Nessa configuração, quando acessado `/index.php/inicio` ou `/index.php` (e até `/`), o arquivo anteriormente referido será incluído.
 
