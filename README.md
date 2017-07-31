@@ -75,4 +75,4 @@ public static $titulo="Início";
 public static $corTema="#ffffff";
 public static $keywrds="";
 ```
-## Estes dados devem ser modificados.
+## Esses dados devem ser modificados.
