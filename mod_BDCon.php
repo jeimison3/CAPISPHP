@@ -1,8 +1,8 @@
 <?php
 class DBCon{
-public static $DB=array('db' => 'pesq_formulario',
+public static $DB=array('db' => 'sistema',
 'user' => 'root',
-'pass' => '123',
+'pass' => '',
 'addr' => 'localhost',
 'encoding' => 'utf8',
 'timezone' => 'America/Fortaleza');
