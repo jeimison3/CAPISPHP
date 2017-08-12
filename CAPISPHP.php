@@ -1,8 +1,15 @@
 <?php
-//Desenvolvido por Jeimison M. Lima | http://jeimison.me.pn | https://github.com/jeimison3/CAPISPHP/
+/**
+ * @author Jeimison M. Lima
+ * @version 1.0.000
+ * @since 2018-08-03
+ */
+// http://jeimison.me.pn | https://github.com/jeimison3/CAPISPHP/
 
 include_once('./mod_PageControl.php'); //Controle de redirecionamentos [MODIFIQUE]
 include_once('./mod_URLPos.php'); //Funções para redirecionamentos
+include_once('./mod_Bootstrap.php'); //Livraria de funções para Bootstrap
+include_once('./mod_BDCon.php'); //Funções para BD
 
 //Regras para estrutura HTML da página:
 class CAPISPHP_Structure{
