@@ -18,6 +18,7 @@ tr td{font-style: italic;}
 <table style="width:40%;">
 <tbody>
 <tr><th colspan="2">Exemplos dos módulos (<i>note seus links</i>)</th></tr>
+<tr><td>mod_BDCon.php</td><th><a target="_blank" href="<?php echo($rootdir); ?>index.php/html_bdcon">Abrir exemplo</a> (necessário modificar)</th></tr>
 <tr><td>mod_FileUploads.php</td><th><a target="_blank" href="<?php echo($rootdir); ?>index.php/html_fileupload">Abrir exemplo</a></th></tr>
 <tr><td>mod_PHPMailer.php</td><th><a target="_blank" href="<?php echo($rootdir); ?>index.php/html_mailsend">Abrir exemplo</a> (necessário modificar)</th></tr>
 

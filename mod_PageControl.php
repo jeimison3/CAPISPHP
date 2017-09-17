@@ -7,14 +7,14 @@ private static $indexes=array(
 'exemplos/exemplo.html.FileUploads.php'=>'html_fileupload',
 'exemplos/exemplo.FileUploads.php'=>'php_fileupload',
 'exemplos/exemplo.html.ModulePHPMailer.php'=>'html_mailsend',
-'exemplos/exemplo.ModulePHPMailer.php'=>'php_mailsend'
+'exemplos/exemplo.ModulePHPMailer.php'=>'php_mailsend',
+'exemplos/exemplo.BDCon.php'=>'php_bdcon',
+'exemplos/exemplo.html.BDCon.php'=>'html_bdcon'
 );
 private static $DEFAULT='inicio';
 
 private static $ERRORS=array(
 404 => 'err404.php');
-
-
 
 public static function navegar_para($navEnter){
   if(!isset($navEnter[1])) $navEnter[1]=self::$DEFAULT;

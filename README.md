@@ -56,9 +56,10 @@ public static $keywrds="site,inicio,exemplo";
 
 
 # Estrutura básica de uma View:
-O arquivo em questão é o `inicio.php`.
+O arquivo pode ter qualquer nome, desde que referenciado no `mod_PageControl.php`.
 ```php
-<?php $mvw = new MainView();
+<?php
+$mvw = new MainView();
 CAPISPHP_Structure::setTitl("View Exemplo");
 ?>
 <html>
