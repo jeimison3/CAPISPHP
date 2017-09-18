@@ -21,6 +21,7 @@ class FileUpload{
   $extensao_correta=true; //Começa como verdadeiro
   $fileStatus['fullname']=$arquivo_trajeto;
   $fileStatus['name_last']=$uploadFile["name"];
+  $fileStatus['tmpname']=$uploadFile["tmp_name"];
   $fileStatus['name']=$nome_trajeto;
   $fileStatus['ext']=$extensao_arquivo;
   $fileStatus['type']=$uploadFile['type'];
@@ -35,7 +36,9 @@ class FileUpload{
     if($extensao_correta) $this->errordata=array('code'=>2,"value"=>"Não é possível salvar: Extensão não suportada");
     if(file_exists($arquivo_trajeto)) $this->errordata=array('code'=>3,"value"=>"Não é possível salvar: O arquivo já existe.");
   }
-  if($sucesso) return $fileStatus; else return false;
+
+  $fileStatus['moved']=$sucesso;
+  return $fileStatus;
   }
 }
 ?>

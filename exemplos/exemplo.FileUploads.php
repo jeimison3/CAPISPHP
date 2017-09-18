@@ -8,16 +8,17 @@ $regras_upload=array(
 );
 
 $uploader=new FileUpload($regras_upload); //Cria classe com as regras
-
-if( $instancia = $uploader->upload($_FILES["anexo"]) ){ //Faz upload de arquivo
+$instancia = $uploader->upload($_FILES["anexo"]);
+if( $instancia['moved'] ){ //Verifica se arquivo foi movido com sucesso.
   echo("<p>Nome: ".$instancia["name"]."</p>".
        "<p>Nome original: ".$instancia["name_last"]."</p>".
+       "<p>Arquivo temp.: ".$instancia["tmpname"]."</p>".
        "<p>Endereço: ".$instancia["fullname"]."</p>".
        "<p>Extensão: ".$instancia["ext"]."</p>".
        "<p>Tipo: ".$instancia["type"]."</p>".
        "<p>Tamanho: ".(floatval($instancia["size"])/1024)." KB</p>"
      );
-}else{ //Caso retorne FALSO, trata erro:
+}else{ //Caso retorne FALSO, exibe razão
   echo("<p>Código: ".$uploader->getErrorStatus()['code']."</p>".
        "<p>Mensagem: ".$uploader->getErrorStatus()['value']."</p>"
      );
