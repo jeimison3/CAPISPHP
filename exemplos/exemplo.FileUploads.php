@@ -7,9 +7,12 @@ $regras_upload=array(
   'prefix_name'=>'curric_', //Adicionar prefixo ao nome do arquivo
 );
 
+//Se o índice 'path_name' não for especificado, o arquivo não será movido,
+// mas será dado como sucesso('ok') o upload ser concluído.
+
 $uploader=new FileUpload($regras_upload); //Cria classe com as regras
 $instancia = $uploader->upload($_FILES["anexo"]);
-if( $instancia['moved'] ){ //Verifica se arquivo foi movido com sucesso.
+if( $instancia['ok'] ){ //Verifica se arquivo foi movido com sucesso.
   echo("<p>Nome: ".$instancia["name"]."</p>".
        "<p>Nome original: ".$instancia["name_last"]."</p>".
        "<p>Arquivo temp.: ".$instancia["tmpname"]."</p>".
