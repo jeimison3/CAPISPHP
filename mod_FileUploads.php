@@ -46,7 +46,7 @@ class FileUpload{
     if( move_uploaded_file($uploadFile['tmp_name'], $arquivo_trajeto) ){
       $sucesso=true;
     }else{$this->errordata=array('code'=>1,"value"=>"Não foi possível mover o arquivo. Verifique as permissões da pasta.");}
-  }elseif(!$salvar_local){
+  }elseif((!$salvar_local)&&($extensao_correta)){
     $sucesso=true;
   } else {
     if($extensao_correta) $this->errordata=array('code'=>2,"value"=>"Não é possível salvar: Extensão não suportada");
