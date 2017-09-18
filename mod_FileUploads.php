@@ -27,14 +27,16 @@ class FileUpload{
   $fileStatus['type']=$uploadFile['type'];
   $fileStatus['size']=$uploadFile['size'];//Em Bytes. Dividir por 1024 para KBytes
   if(isset($this->regrasVector['extension'])) $extensao_correta=in_array($extensao_arquivo,$this->regrasVector['extension']);
+  $pastaacessivel=is_writable($this->regrasVector['path_name']);
   //Se existir alguma extensão, verifica alguma bate com a atual
-  if ($extensao_correta && (!file_exists($arquivo_trajeto)) ) { //Se as extensões estiverem corretas, e o arquivo ainda não existe:
+  if ($pastaacessivel && $extensao_correta && (!file_exists($arquivo_trajeto)) ) { //Se as extensões estiverem corretas, e o arquivo ainda não existe:
     if( move_uploaded_file($uploadFile['tmp_name'], $arquivo_trajeto) ){
       $sucesso=true;
     }else{$this->errordata=array('code'=>1,"value"=>"Não foi possível mover o arquivo. Verifique as permissões da pasta.");}
   } else {
     if($extensao_correta) $this->errordata=array('code'=>2,"value"=>"Não é possível salvar: Extensão não suportada");
-    if(file_exists($arquivo_trajeto)) $this->errordata=array('code'=>3,"value"=>"Não é possível salvar: O arquivo já existe.");
+    elseif(file_exists($arquivo_trajeto)) $this->errordata=array('code'=>3,"value"=>"Não é possível salvar: O arquivo já existe.");
+    elseif($pastaacessivel) $this->errordata=array('code'=>5,"value"=>"Não é possível salvar: Pasta sem permissão.");
   }
 
   $fileStatus['moved']=$sucesso;
